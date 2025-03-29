@@ -1,220 +1,194 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phuket Sparkle Cleaning Services</title>
-    <meta name="description" content="Professional cleaning services in Phuket for villas, houses, condos, and businesses. Deep cleaning, regular cleaning, and laundry service available across Phuket Island.">
-    <meta name="keywords" content="cleaning services Phuket, villa cleaning Phuket, house cleaning Phuket, condo cleaning Phuket, business cleaning Phuket, deep cleaning Phuket, laundry service Phuket, expats Phuket, local Phuket, professional cleaners Phuket">
-    <meta name="author" content="Your Name/Company Name">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <title>Phuket Sparkle Cleaning | Professional Cleaning Services</title>
+    <meta name="description" content="Premium cleaning services in Phuket. Villa, condo, commercial cleaning & laundry services. Certified professionals, eco-friendly products.">
+    
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
-        body {
-            font-family: 'Inter', sans-serif; /* Or your chosen font */
+        :root {
+            --primary: #2B79B4;
+            --secondary: #38A3A5;
+            --accent: #FFC857;
+            --dark: #1A1A1A;
+            --light: #F8F9FA;
+        }
+
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f8f8f8; /* Light background */
-            color: #333; /* Dark text */
-            line-height: 1.6;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
+        body {
+            background: var(--light);
+            color: var(--dark);
+            overflow-x: hidden;
         }
 
-        header {
-            text-align: center;
-            padding: 40px 0;
+        /* Language Switch */
+        .lang-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: white;
+            padding: 8px 15px;
+            border-radius: 25px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
         }
 
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            color: #2c3e50; /* Darker heading color */
-        }
-
-        .hero-image {
-            width: 100%;
-            max-height: 400px;
-            object-fit: cover;
-            border-radius: 8px;
-            margin-bottom: 30px;
-        }
-
-        section {
-            padding: 40px 0;
-            border-top: 1px solid #eee;
-        }
-
-        h2 {
-            font-size: 2em;
-            margin-bottom: 20px;
-            color: #2c3e50;
-            text-align: center;
-        }
-
-        .service-item {
-            margin-bottom: 20px;
-            padding: 15px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-        }
-
-        .contact-options {
+        /* Hero Section */
+        .hero {
+            height: 100vh;
             display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .contact-options a, .contact-options p {
-            display: block;
-            padding: 10px 15px;
-            background-color: #e0f2f7; /* Light blue for contact */
-            color: #333;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-
-        .contact-options a:hover {
-            background-color: #cce5ef;
-        }
-
-        form {
-            display: grid;
-            gap: 15px;
-        }
-
-        form input, form textarea {
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-
-        form button {
-            padding: 12px 20px;
-            background-color: #3498db; /* Blue button */
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        form button:hover {
-            background-color: #2980b9;
-        }
-
-        .about-owner {
-            display: flex;
-            gap: 20px;
             align-items: center;
-            margin-top: 20px;
-        }
-
-        .about-owner img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-
-        footer {
+            justify-content: center;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('hero-bg.jpg') center/cover;
+            color: white;
             text-align: center;
-            padding: 20px 0;
-            background-color: #333;
-            color: #fff;
-            font-size: 0.9em;
-            margin-top: 50px;
+            padding: 0 20px;
         }
 
-        /* Responsive Design (Basic) */
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            animation: slideUp 1s ease;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 4rem 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        /* Animated Contact Form */
+        .contact-wrapper {
+            max-width: 800px;
+            margin: 4rem auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .container {
-                padding: 15px;
-            }
-            h1 {
-                font-size: 2em;
-            }
-            h2 {
-                font-size: 1.6em;
-            }
-            .contact-options {
-                flex-direction: column;
-            }
-            .about-owner {
-                flex-direction: column;
-                text-align: center;
-            }
-            .about-owner img {
-                margin-bottom: 10px;
-            }
+            .hero h1 { font-size: 2.5rem; }
+            .services-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Phuket Sparkle Cleaning Services</h1>
-            <p>Your trusted partner for a spotless home or business in Phuket.</p>
-            <img src="https://via.placeholder.com/1200x400?text=Modern+Clean+Interior" alt="Modern Clean Interior" class="hero-image">
-        </header>
-
-        <section id="about">
-            <h2>About Us</h2>
-            <p>Welcome to Phuket Sparkle Cleaning Services! We are a locally owned and operated business dedicated to providing professional and reliable cleaning services across Phuket Island. With years of experience, our trusted team is committed to delivering exceptional results for your villa, house, condo, or business.</p>
-            <div class="about-owner">
-                <img src="https://via.placeholder.com/100?text=Owner+1" alt="Owner Image 1">
-                <img src="https://via.placeholder.com/100?text=Owner+2" alt="Owner Image 2">
-                <p>Founded by a local Thai resident and her family, we understand the importance of a clean and comfortable living or working space in the beautiful island of Phuket.</p>
-            </div>
-        </section>
-
-        <section id="services">
-            <h2>Our Services</h2>
-            <div class="service-item">
-                <h3>Deep Cleaning (Based on Request)</h3>
-                <p>Thorough cleaning tailored to your specific needs. Perfect for move-ins, move-outs, or when your space needs extra attention.</p>
-            </div>
-            <div class="service-item">
-                <h3>Regular Cleaning (Villa, House, Condo, Business)</h3>
-                <p>Customized cleaning schedules to keep your property consistently clean. We work with you to determine the frequency and specific tasks.</p>
-            </div>
-            <div class="service-item">
-                <h3>Laundry Service (Pick up / Delivery)</h3>
-                <p>Convenient laundry service with pick-up and delivery. Priced at 120 THB per KG plus a delivery fee (based on location).</p>
-            </div>
-        </section>
-
-        <section id="contact">
-            <h2>Contact Us</h2>
-            <p>Get in touch to discuss your cleaning needs and receive a personalized quote.</p>
-            <div class="contact-options">
-                <form action="#" method="POST"> <input type="text" name="name" placeholder="Name" required>
-                    <input type="text" name="lastname" placeholder="Last Name" required>
-                    <input type="email" name="email" placeholder="Email" required>
-                    <input type="tel" name="phone" placeholder="Phone Number">
-                    <textarea name="request" placeholder="Your Request" rows="4" required></textarea>
-                    <button type="submit">Send Request</button>
-                </form>
-                <p>Or reach us directly:</p>
-                <a href="mailto:your.email@example.com">Email Us</a>
-                <a href="tel:+66XXXXXXXXX">Call Us</a>
-                <a href="https://wa.me/YOUR_WHATSAPP_NUMBER">WhatsApp</a>
-                <a href="https://t.me/YOUR_TELEGRAM_USERNAME">Telegram</a>
-                <a href="https://line.me/ti/p/YOUR_LINE_ID">Line</a>
-            </div>
-        </section>
-
-        <footer>
-            <p>&copy; 2025 Phuket Sparkle Cleaning Services | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
-        </footer>
+    <!-- Language Switch -->
+    <div class="lang-switcher">
+        <select id="languageSelect">
+            <option value="en">English</option>
+            <option value="th">ไทย</option>
+            <option value="ru">Русский</option>
+        </select>
     </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 data-i18n="hero_title">Premium Cleaning Services in Phuket</h1>
+            <p data-i18n="hero_sub">Your Trusted Cleaning Partner</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-grid">
+        <div class="service-card">
+            <i class="fas fa-broom"></i>
+            <h3 data-i18n="service1_title">Deep Cleaning</h3>
+            <p data-i18n="service1_desc">Comprehensive cleaning solution for your space</p>
+        </div>
+        
+        <div class="service-card">
+            <i class="fas fa-calendar-alt"></i>
+            <h3 data-i18n="service2_title">Regular Maintenance</h3>
+            <p data-i18n="service2_desc">Customized cleaning schedules</p>
+        </div>
+
+        <div class="service-card">
+            <i class="fas fa-tshirt"></i>
+            <h3 data-i18n="service3_title">Laundry Service</h3>
+            <p data-i18n="service3_desc">Pickup & delivery available</p>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <div class="contact-wrapper">
+        <form class="animated-form">
+            <div class="form-group">
+                <input type="text" placeholder="Name" data-i18n-placeholder="form_name">
+            </div>
+            <div class="form-group">
+                <input type="email" placeholder="Email" data-i18n-placeholder="form_email">
+            </div>
+            <button type="submit" data-i18n="form_submit">Send Request</button>
+        </form>
+    </div>
+
+    <script>
+        // Language Switching Logic
+        const languageSelect = document.getElementById('languageSelect');
+        
+        languageSelect.addEventListener('change', (e) => {
+            const lang = e.target.value;
+            document.documentElement.lang = lang;
+            // Add logic to update all translatable elements
+        });
+
+        // Intersection Observer for animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                }
+            });
+        });
+
+        document.querySelectorAll('.form-group').forEach((el) => {
+            observer.observe(el);
+        });
+    </script>
 </body>
 </html>
