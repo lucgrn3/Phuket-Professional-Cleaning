@@ -1,102 +1,102 @@
 // script.js
 
 document.addEventListener('DOMContentLoaded', () => {
-
     // --- Mobile Navigation Toggle ---
     const hamburgerBtn = document.querySelector('.hamburger-btn');
-    const mainNav = document.querySelector('.main-nav'); // Target the nav container
-    const navContent = document.getElementById('navContent'); // The actual content to show/hide
+    const mainNav = document.querySelector('.main-nav');
+    const navContent = document.getElementById('navContent');
+
+    // Error handling: Check if navigation elements exist
+    if (!hamburgerBtn || !mainNav || !navContent) {
+        console.error('Navigation elements not found');
+        return;
+    }
+
     const navLinks = navContent.querySelectorAll('a');
 
-    if (hamburgerBtn && mainNav && navContent) {
-        hamburgerBtn.addEventListener('click', () => {
-            const isExpanded = hamburgerBtn.getAttribute('aria-expanded') === 'true';
-            mainNav.classList.toggle('nav--open'); // Toggle class on the nav container
-            hamburgerBtn.setAttribute('aria-expanded', !isExpanded);
-        });
+    // Toggle mobile menu
+    hamburgerBtn.addEventListener('click', () => {
+        const isExpanded = hamburgerBtn.getAttribute('aria-expanded') === 'true';
+        mainNav.classList.toggle('nav--open');
+        hamburgerBtn.setAttribute('aria-expanded', !isExpanded);
+        hamburgerBtn.setAttribute('aria-label', isExpanded ? 'Open menu' : 'Close menu');
+    });
 
-        // Close mobile menu when a link is clicked
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                if (mainNav.classList.contains('nav--open')) {
-                    mainNav.classList.remove('nav--open');
-                    hamburgerBtn.setAttribute('aria-expanded', 'false');
-                }
-            });
-        });
-
-        // Optional: Close menu if clicked outside
-        document.addEventListener('click', (event) => {
-             // Check if the click is outside the nav container AND outside the button
-            if (!mainNav.contains(event.target) && !hamburgerBtn.contains(event.target)) {
-                if (mainNav.classList.contains('nav--open')) {
-                    mainNav.classList.remove('nav--open');
-                    hamburgerBtn.setAttribute('aria-expanded', 'false');
-                }
+    // Close menu when a link is clicked
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (mainNav.classList.contains('nav--open')) {
+                mainNav.classList.remove('nav--open');
+                hamburgerBtn.setAttribute('aria-expanded', 'false');
+                hamburgerBtn.setAttribute('aria-label', 'Open menu');
             }
         });
-    }
+    });
 
+    // Close menu if clicked outside
+    document.addEventListener('click', (event) => {
+        if (!mainNav.contains(event.target) && !hamburgerBtn.contains(event.target)) {
+            if (mainNav.classList.contains('nav--open')) {
+                mainNav.classList.remove('nav--open');
+                hamburgerBtn.setAttribute('aria-expanded', 'false');
+                hamburgerBtn.setAttribute('aria-label', 'Open menu');
+            }
+        }
+    });
 
-    // --- Language Translation ---
-    const translateElements = document.querySelectorAll('[data-en]');
+    // --- Language Switching ---
     const langButtons = document.querySelectorAll('.language-switcher button');
+    const elementsToTranslate = document.querySelectorAll('[data-en]');
 
-    // Function to translate text based on selected language
+    // Function to translate page content
     function translatePage(lang) {
-        translateElements.forEach(element => {
-            const translation = element.dataset[lang];
-            if (translation !== undefined) { // Check if translation exists
-                // Handle elements that might contain child elements (like links in contact) carefully
-                // This simple version assumes textContent is sufficient for most cases
+        elementsToTranslate.forEach(element => {
+            const translation = element.getAttribute(`data-${lang}`);
+            if (translation !== null) {
                 element.textContent = translation;
             } else {
-                // Fallback to English if translation is missing for the selected language
-                 element.textContent = element.dataset['en'] || element.textContent;
-                 // console.warn(`Translation missing for lang '${lang}'`, element);
+                // Fallback to English if translation is missing
+                element.textContent = element.getAttribute('data-en') || element.textContent;
+                console.warn(`Translation missing for '${lang}' in element:`, element);
             }
         });
-        // Update html lang attribute
-        document.documentElement.lang = lang;
-
-        // Optionally: Highlight the active language button (add later if needed)
-        langButtons.forEach(btn => {
-            btn.classList.toggle('active', btn.dataset.lang === lang);
-        });
+        // Update HTML lang attribute for accessibility
+        document.documentElement.setAttribute('lang', lang);
     }
 
-    // Function to get user's preferred language (improved)
+    // Function to determine user's preferred language
     function getUserPreferredLanguage() {
-        const storedLang = localStorage.getItem('preferredLanguage');
-        if (storedLang && ['en', 'th', 'ru'].includes(storedLang)) { // Validate stored lang
+        const storedLang = localStorage.getItem('preferredLang');
+        const validLangs = ['en', 'th', 'ru'];
+
+        // Return stored language if valid
+        if (storedLang && validLangs.includes(storedLang)) {
             return storedLang;
         }
 
-        // Check browser language
-        const browserLang = navigator.language || navigator.userLanguage;
-        if (browserLang.startsWith('th')) {
-            return 'th';
-        } else if (browserLang.startsWith('ru')) {
-            return 'ru';
-        } else {
-            return 'en'; // Default to English
-        }
+        // Detect browser language as fallback
+        const browserLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+        if (browserLang.startsWith('th')) return 'th';
+        if (browserLang.startsWith('ru')) return 'ru';
+        return 'en'; // Default to English
     }
 
     // Set initial language on page load
     const initialLang = getUserPreferredLanguage();
     translatePage(initialLang);
 
-    // Add event listeners to language switchers
+    // Add event listeners for language buttons
     langButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const selectedLang = this.dataset.lang;
+        button.addEventListener('click', () => {
+            const selectedLang = button.getAttribute('data-lang');
             if (selectedLang) {
                 translatePage(selectedLang);
-                // Store preference
-                localStorage.setItem('preferredLanguage', selectedLang);
+                localStorage.setItem('preferredLang', selectedLang);
             }
         });
     });
 
-}); // End DOMContentLoaded
+    // Simulate click on initial language button to ensure consistency
+    const initialButton = document.querySelector(`.language-switcher button[data-lang="${initialLang}"]`);
+    if (initialButton) initialButton.click();
+});
