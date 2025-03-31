@@ -1,194 +1,178 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phuket Sparkle Cleaning | Professional Cleaning Services</title>
-    <meta name="description" content="Premium cleaning services in Phuket. Villa, condo, commercial cleaning & laundry services. Certified professionals, eco-friendly products.">
-    
-    <!-- Fonts & Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <style>
-        :root {
-            --primary: #2B79B4;
-            --secondary: #38A3A5;
-            --accent: #FFC857;
-            --dark: #1A1A1A;
-            --light: #F8F9FA;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
-        }
-
-        body {
-            background: var(--light);
-            color: var(--dark);
-            overflow-x: hidden;
-        }
-
-        /* Language Switch */
-        .lang-switcher {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1000;
-            background: white;
-            padding: 8px 15px;
-            border-radius: 25px;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
-        }
-
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-                        url('hero-bg.jpg') center/cover;
-            color: white;
-            text-align: center;
-            padding: 0 20px;
-        }
-
-        .hero h1 {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-            animation: slideUp 1s ease;
-        }
-
-        /* Services Grid */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            padding: 4rem 2rem;
-        }
-
-        .service-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-        }
-
-        /* Animated Contact Form */
-        .contact-wrapper {
-            max-width: 800px;
-            margin: 4rem auto;
-            background: white;
-            padding: 3rem;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-            opacity: 0;
-            animation: fadeIn 0.5s ease forwards;
-        }
-
-        @keyframes slideUp {
-            from { transform: translateY(50px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-
-        @keyframes fadeIn {
-            to { opacity: 1; }
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
-            .services-grid { grid-template-columns: 1fr; }
-        }
-    </style>
+    <title>Pat's Cleaning Services Phuket</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Language Switch -->
-    <div class="lang-switcher">
-        <select id="languageSelect">
-            <option value="en">English</option>
-            <option value="th">ไทย</option>
-            <option value="ru">Русский</option>
-        </select>
-    </div>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1 data-i18n="hero_title">Premium Cleaning Services in Phuket</h1>
-            <p data-i18n="hero_sub">Your Trusted Cleaning Partner</p>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <!-- Placeholder for logo -->
+            <h1>Pat's Cleaning Services</h1>
         </div>
-    </section>
+        <nav>
+            <ul>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <!-- Services Section -->
-    <section class="services-grid">
-        <div class="service-card">
-            <i class="fas fa-broom"></i>
-            <h3 data-i18n="service1_title">Deep Cleaning</h3>
-            <p data-i18n="service1_desc">Comprehensive cleaning solution for your space</p>
-        </div>
-        
-        <div class="service-card">
-            <i class="fas fa-calendar-alt"></i>
-            <h3 data-i18n="service2_title">Regular Maintenance</h3>
-            <p data-i18n="service2_desc">Customized cleaning schedules</p>
-        </div>
+    <!-- Main Content -->
+    <main>
+        <!-- About Us Section -->
+        <section id="about">
+            <h2>About Us</h2>
+            <p>
+                Pat's Cleaning Services Phuket is a locally owned small business serving all areas of Phuket. 
+                We pride ourselves on delivering personalized cleaning solutions tailored to each client's property. 
+                Whether it’s a regular spruce-up or an urgent deep clean, we’ve got you covered!
+            </p>
+        </section>
 
-        <div class="service-card">
-            <i class="fas fa-tshirt"></i>
-            <h3 data-i18n="service3_title">Laundry Service</h3>
-            <p data-i18n="service3_desc">Pickup & delivery available</p>
-        </div>
-    </section>
+        <!-- Services Section -->
+        <section id="services">
+            <h2>Services</h2>
+            <ul>
+                <li>Regular Cleaning</li>
+                <li>Urgent/Deep Cleaning</li>
+                <li>Laundry Delivery (120 THB/KG + Delivery)</li>
+            </ul>
+        </section>
 
-    <!-- Contact Form -->
-    <div class="contact-wrapper">
-        <form class="animated-form">
-            <div class="form-group">
-                <input type="text" placeholder="Name" data-i18n-placeholder="form_name">
-            </div>
-            <div class="form-group">
-                <input type="email" placeholder="Email" data-i18n-placeholder="form_email">
-            </div>
-            <button type="submit" data-i18n="form_submit">Send Request</button>
-        </form>
-    </div>
+        <!-- Contact Us Section -->
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Email: info@patsCleaningPhuket.com</p>
+            <p>Phone: +66 123 456 789</p>
+            <p>Operating all around Phuket!</p>
+        </section>
+    </main>
 
-    <script>
-        // Language Switching Logic
-        const languageSelect = document.getElementById('languageSelect');
-        
-        languageSelect.addEventListener('change', (e) => {
-            const lang = e.target.value;
-            document.documentElement.lang = lang;
-            // Add logic to update all translatable elements
-        });
-
-        // Intersection Observer for animations
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if(entry.isIntersecting) {
-                    entry.target.style.opacity = 1;
-                }
-            });
-        });
-
-        document.querySelectorAll('.form-group').forEach((el) => {
-            observer.observe(el);
-        });
-    </script>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Pat's Cleaning Services Phuket. All rights reserved.</p>
+    </footer>
 </body>
 </html>
+
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f5f6f2;
+    color: #333;
+}
+
+/* Header */
+header {
+    background-color: #4a8b7e;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo h1 {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #f9c74f;
+}
+
+/* Main Content */
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+section {
+    margin-bottom: 3rem;
+}
+
+h2 {
+    color: #4a8b7e;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #f9c74f;
+    display: inline-block;
+}
+
+p, li {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+#services ul {
+    list-style: none;
+    padding-left: 1rem;
+}
+
+#services li {
+    margin: 0.5rem 0;
+    position: relative;
+}
+
+#services li:before {
+    content: "✓";
+    color: #4a8b7e;
+    margin-right: 0.5rem;
+}
+
+/* Footer */
+footer {
+    background-color: #4a8b7e;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+}
