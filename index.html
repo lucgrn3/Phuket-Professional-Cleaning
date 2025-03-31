@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pat's Cleaning Services Phuket</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         /* Reset and Base Styles */
         * {
@@ -31,6 +35,12 @@
             top: 0;
             z-index: 10;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
         .logo h1 {
@@ -62,13 +72,13 @@
         /* Main Content */
         main {
             max-width: 1100px;
-            margin: 0 auto;
+            margin: 2rem auto; /* Increased top/bottom margin */
             padding: 3rem 1.5rem;
         }
 
         section {
             margin-bottom: 4rem;
-            padding: 2rem;
+            padding: 2.5rem; /* Increased padding */
             background: #fff;
             border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
@@ -99,6 +109,7 @@
         p, li {
             font-size: 1.1rem;
             color: #4a5568;
+            line-height: 1.7; /* Improved line height for readability */
         }
 
         #services ul {
@@ -107,16 +118,46 @@
         }
 
         #services li {
-            margin: 1rem 0;
+            margin: 1.2rem 0; /* Increased margin */
             display: flex;
             align-items: center;
-            gap: 0.75rem;
+            gap: 1rem; /* Increased gap */
         }
 
-        #services li::before {
-            content: "✨";
+        #services li i {
             color: #2f847c;
+            font-size: 1.4rem; /* Increased icon size */
+        }
+
+        /* Contact Us Section */
+        #contact {
+            text-align: center; /* Center the contact information */
+        }
+
+        .contact-details {
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-details p {
             font-size: 1.2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: #fdd85d;
+            color: #2f847c;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .cta-button:hover {
+            background-color: #e3c450;
+            transform: translateY(-2px);
         }
 
         /* Footer */
@@ -136,6 +177,10 @@
                 padding: 1rem;
             }
 
+            .logo {
+                margin-bottom: 1rem;
+            }
+
             nav ul {
                 flex-direction: column;
                 gap: 1.5rem;
@@ -149,16 +194,17 @@
             section {
                 padding: 1.5rem;
             }
-        }
 
-        /* Google Fonts */
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+            .contact-details {
+                margin-bottom: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
         <div class="logo">
+            <i class="fas fa-broom fa-lg" style="color:#fff;"></i>
             <h1>Pat's Cleaning Services</h1>
         </div>
         <nav>
@@ -170,38 +216,36 @@
         </nav>
     </header>
 
-    <!-- Main Content -->
     <main>
-        <!-- About Us Section -->
         <section id="about">
             <h2>About Us</h2>
             <p>
-                Pat's Cleaning Services Phuket is a locally owned small business proudly serving all corners of Phuket. 
-                We specialize in personalized cleaning solutions, assigning each client a dedicated team based on their property needs. 
+                Pat's Cleaning Services Phuket is a locally owned small business proudly serving all corners of Phuket.
+                We specialize in personalized cleaning solutions, assigning each client a dedicated team based on their property needs.
                 From routine upkeep to emergency deep cleans, we bring a touch of tropical freshness to every job!
             </p>
         </section>
 
-        <!-- Services Section -->
         <section id="services">
             <h2>Services</h2>
             <ul>
-                <li>Regular Cleaning</li>
-                <li>Urgent/Deep Cleaning</li>
-                <li>Laundry Delivery (120 THB/KG + Delivery)</li>
+                <li><i class="fas fa-check-circle"></i> Regular Cleaning</li>
+                <li><i class="fas fa-fire"></i> Urgent/Deep Cleaning</li>
+                <li><i class="fas fa-tshirt"></i> Laundry Delivery (120 THB/KG + Delivery)</li>
             </ul>
         </section>
 
-        <!-- Contact Us Section -->
         <section id="contact">
             <h2>Contact Us</h2>
-            <p>Email: info@patsCleaningPhuket.com</p>
-            <p>Phone: +66 123 456 789</p>
-            <p>We operate island-wide across Phuket!</p>
+            <div class="contact-details">
+                <p>Email: info@patsCleaningPhuket.com</p>
+                <p>Phone: +66 123 456 789</p>
+                <p>We operate island-wide across Phuket!</p>
+            </div>
+            <a href="mailto:info@patsCleaningPhuket.com" class="cta-button">Get a Free Quote</a>
         </section>
     </main>
 
-    <!-- Footer -->
     <footer>
         <p>© 2025 Pat's Cleaning Services Phuket. All rights reserved.</p>
     </footer>
