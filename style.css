@@ -129,11 +129,11 @@ p.lead {
 --------------------------------------------------------------*/
 .container {
     width: 90%;
-    max-width: 900;
+    max-width: 1140px; /* Or whatever value you set */
     margin-left: auto;
     margin-right: auto;
-    padding-left: 0.5rem;              /* CHANGE THIS VALUE - Try 0.5rem or 0 */
-    padding-right: 0.5rem; 
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .section-padding {
@@ -161,8 +161,8 @@ p.lead {
 # Header & Navigation (Desktop First)
 --------------------------------------------------------------*/
 .site-header {
-    background: linear-gradient(135deg, var(--color-secondary), var(--color-primary));
-    padding: var(--spacing-sm) 0;
+    background: linear-gradient(135deg, var(--color-secondary), var(--color-primary)); /* Full width background */
+    padding: var(--spacing-sm) 0; /* Padding top/bottom, 0 left/right */
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -176,9 +176,10 @@ p.lead {
     align-items: center;
 }
 
+/* --- Change this rule --- */
 .logo img {
-    /* max-height: 60px; */ /* This was the old value */
-    max-height: 50px;  /* CHANGE THIS VALUE - Try 50px, 45px, etc. */
+    /* max-height: 50px; */ /* Remove or comment out old value */
+    max-height: 40px;  /* <--- DECREASE this value (e.g., 40px or 45px) */
     width: auto;
 }
 
