@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://phuket-sunshinecleaning.com/sitemap.xml
