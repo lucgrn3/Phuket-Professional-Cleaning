@@ -3,6 +3,506 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sun Shine Cleaning - Professional Cleaning Services</title>
+    <meta name="description" content="Brighten your space with Sun Shine Cleaning. Professional cleaning services for homes and businesses. Get a free quote today!">
+    <meta name="keywords" content="cleaning services, Sunshine Cleaning, house cleaning, deep cleaning, commercial cleaning, professional cleaning, reliable cleaning">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Sun Shine Cleaning">
+    <link rel="canonical" href="https://yourdomain.com/">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Modern Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.7;
+            background-color: #fff9ec;
+            color: #343a40;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #ffc107, #ff9800);
+            padding: 1.5rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo i {
+            font-size: 1.8rem;
+            color: #fff;
+        }
+
+        .logo h1 {
+            color: #fff;
+            font-size: 2rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 0;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 3rem;
+        }
+
+        nav a {
+            color: #fff;
+            font-size: 1.15rem;
+            font-weight: 500;
+            transition: color 0.3s ease, transform 0.2s ease-in-out;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: #fff;
+            transform: translateY(-2px);
+            text-shadow: 0 0 5px #fff;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 3rem 2rem;
+        }
+
+        section {
+            margin-bottom: 5rem;
+            padding: 3rem;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.2s ease-in-out;
+        }
+
+        section:hover {
+            transform: translateY(-3px);
+        }
+
+        h2 {
+            color: #ff9800;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            position: relative;
+            font-weight: 700;
+        }
+
+        h2::after {
+            content: '';
+            width: 60px;
+            height: 4px;
+            background: #ffc107;
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+        }
+
+        p, li {
+            font-size: 1.2rem;
+            color: #495057;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        #services ul {
+            list-style: none;
+            padding-left: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        #services li {
+            margin: 0;
+            padding: 1.5rem;
+            background-color: #fff3cd;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            transition: background-color 0.2s ease-in-out;
+        }
+
+        #services li:hover {
+            background-color: #ffecb3;
+        }
+
+        #services li i {
+            color: #ff9800;
+            font-size: 1.6rem;
+        }
+
+        /* Contact Us Section */
+        #contact {
+            text-align: center;
+        }
+
+        .contact-details {
+            margin-bottom: 2rem;
+        }
+
+        .contact-details p {
+            font-size: 1.3rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1.2rem 2.5rem;
+            background-color: #ffc107;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 1.2rem;
+            transition: background-color 0.3s ease, transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .cta-button:hover {
+            background-color: #ffb300;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Google Reviews Section */
+        #google-reviews {
+            text-align: center;
+            margin-top: 4rem;
+            padding: 3rem;
+            background-color: #fff9ec;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+        }
+
+        #google-reviews h2 {
+            color: #ff9800;
+            margin-bottom: 2.5rem;
+        }
+
+        .google-reviews-placeholder {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+            font-style: italic;
+            color: #777;
+        }
+
+        /* Footer */
+        footer {
+            background: #ff9800;
+            color: #fff;
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 1rem;
+            border-top: 5px solid #ffc107;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            header {
+                flex-direction: column;
+                padding: 1.5rem;
+            }
+
+            .logo {
+                margin-bottom: 1.5rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 1.5rem;
+                margin-top: 1.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            main {
+                padding: 2rem 1rem;
+            }
+
+            section {
+                padding: 2rem;
+                margin-bottom: 4rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+                margin-bottom: 1.5rem;
+            }
+
+            #services ul {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-details {
+                margin-bottom: 1.5rem;
+            }
+        }
+
+        /* Language Switcher Styles */
+        .language-switcher {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .language-switcher button {
+            background: none;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .language-switcher button:hover {
+            color: #fdd85d;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <i class="fas fa-sun"></i>
+            <h1 data-en="Sun Shine Cleaning" data-th="ซันไชน์ คลีนนิ่ง" data-ru="Сан Шайн Клининг">Sun Shine Cleaning</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#about" data-en="About Us" data-th="เกี่ยวกับเรา" data-ru="О нас">About Us</a></li>
+                <li><a href="#services" data-en="Services" data-th="บริการ" data-ru="Услуги">Services</a></li>
+                <li><a href="#contact" data-en="Contact Us" data-th="ติดต่อเรา" data-ru="Контакты">Contact Us</a></li>
+                <li><a href="#google-reviews" data-en="Reviews" data-th="รีวิว" data-ru="Отзывы">Reviews</a></li>
+            </ul>
+        </nav>
+        <div class="language-switcher">
+            <button data-lang="en">English</button>
+            <button data-lang="th">ไทย</button>
+            <button data-lang="ru">Русский</button>
+        </div>
+    </header>
+
+    <main>
+        <section id="about">
+            <h2 data-en="Discover Sun Shine Cleaning" data-th="ค้นพบ ซันไชน์ คลีนนิ่ง" data-ru="Откройте для себя Сан Шайн Клининг">Discover Sun Shine Cleaning</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center;">
+                <div class="about-content">
+                    <p data-en="Sun Shine Cleaning is your experienced, local Phuket cleaning partner. We're known for our detailed work and fair, custom pricing."
+                       data-th="ซันไชน์ คลีนนิ่ง คือพันธมิตรด้านการทำความสะอาดในภูเก็ตที่มีประสบการณ์ของคุณ เราเป็นที่รู้จักในด้านการทำงานอย่างละเอียดและราคาที่ยุติธรรมและกำหนดเอง"
+                       data-ru="Сан Шайн Клининг — ваш опытный местный партнер по уборке на Пхукете. Мы известны своей тщательной работой и справедливыми индивидуальными ценами.">
+                        Sun Shine Cleaning is your experienced, local Phuket cleaning partner. We're known for our detailed work and fair, custom pricing.
+                    </p>
+                    <p data-en="Serving all of Phuket, we offer professional cleaning with clear communication and updates."
+                       data-th="ให้บริการทั่วทั้งภูเก็ต เรานำเสนอบริการทำความสะอาดแบบมืออาชีพพร้อมการสื่อสารและการอัปเดตที่ชัดเจน"
+                       data-ru="Обслуживая весь Пхукет, мы предлагаем профессиональную уборку с четкой коммуникацией и обновлениями.">
+                        Serving all of Phuket, we offer professional cleaning with clear communication and updates.
+                    </p>
+                    <p data-en="From regular upkeep to specific deep cleans, we tailor our services to your needs. Let us bring the shine to your property."
+                       data-th="ตั้งแต่การดูแลรักษาเป็นประจำไปจนถึงการทำความสะอาดอย่างล้ำลึก เราปรับแต่งบริการของเราให้ตรงกับความต้องการของคุณ ให้เรานำความสดใสมาสู่ทรัพย์สินของคุณ"
+                       data-ru="От регулярного обслуживания до конкретной глубокой очистки — мы адаптируем наши услуги к вашим потребностям. Позвольте нам придать блеск вашей собственности.">
+                        From regular upkeep to specific deep cleans, we tailor our services to your needs. Let us bring the shine to your property.
+                    </p>
+                </div>
+                <div class="about-image">
+                    <img src="placeholder-cleaning-team.jpg" alt="Cleaning professionals" style="max-width: 100%; height: auto; border-radius: 10px;">
+                </div>
+            </div>
+        </section>
+
+        <section id="services">
+            <h2 data-en="Our Comprehensive Cleaning Services" data-th="บริการทำความสะอาดที่ครอบคลุมของเรา" data-ru="Наши комплексные услуги по уборке">Our Comprehensive Cleaning Services</h2>
+            <ul>
+                <li>
+                    <i class="fas fa-home"></i>
+                    <div>
+                        <h3 data-en="Home Cleaning" data-th="ทำความสะอาดบ้าน" data-ru="Уборка дома">Home Cleaning</h3>
+                        <p data-en="Let us brighten your home with our reliable and thorough cleaning services."
+                           data-th="ให้เราทำให้บ้านของคุณสดใสด้วยบริการทำความสะอาดที่เชื่อถือได้และทั่วถึงของเรา"
+                           data-ru="Позвольте нам украсить ваш дом с помощью наших надежных и тщательных услуг по уборке.">
+                            Let us brighten your home with our reliable and thorough cleaning services.
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <i class="fas fa-soap"></i>
+                    <div>
+                        <h3 data-en="Deep Cleaning" data-th="ทำความสะอาดอย่างล้ำลึก" data-ru="Глубокая уборка">Deep Cleaning</h3>
+                        <p data-en="Achieve a deeper level of clean for a healthier and more comfortable environment."
+                           data-th="บรรลุระดับความสะอาดที่ล้ำลึกยิ่งขึ้นเพื่อสภาพแวดล้อมที่ดีต่อสุขภาพและสะดวกสบายยิ่งขึ้น"
+                           data-ru="Добейтесь более глубокого уровня чистоты для более здоровой и комфортной окружающей среды.">
+                            Achieve a deeper level of clean for a healthier and more comfortable environment.
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <i class="fas fa-fire-alt"></i>
+                    <div>
+                        <h3 data-en="Move-In/Move-Out Cleaning" data-th="ทำความสะอาดก่อน/หลังย้ายเข้า" data-ru="Уборка при въезде/выезде">Move-In/Move-Out Cleaning</h3>
+                        <p data-en="Start fresh or leave a lasting impression with our specialized move-in/move-out services."
+                           data-th="เริ่มต้นใหม่อย่างสดชื่นหรือสร้างความประทับใจไม่รู้ลืมด้วยบริการทำความสะอาดก่อน/หลังย้ายเข้าโดยเฉพาะของเรา"
+                           data-ru="Начните с чистого листа или произведите неизгладимое впечатление с помощью наших специализированных услуг по уборке при въезде/выезде.">
+                            Start fresh or leave a lasting impression with our specialized move-in/move-out services.
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <i class="fas fa-villa"></i>
+                    <div>
+                        <h3 data-en="Villa Cleaning" data-th="ทำความสะอาดวิลล่า" data-ru="Уборка вилл">Villa Cleaning</h3>
+                        <p data-en="Maintain the beauty and comfort of your villa with our professional cleaning expertise."
+                           data-th="รักษ  ความสวยงามและความสะดวกสบายของวิลล่าของคุณด้วยความเชี่ยวชาญด้านการทำความสะอาดอย่างมืออาชีพของเรา"
+                           data-ru="Поддерживайте красоту и комфорт вашей виллы с помощью нашего профессионального опыта уборки.">
+                            Maintain the beauty and comfort of your villa with our professional cleaning expertise.
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <i class="fas fa-briefcase"></i>
+                    <div>
+                        <h3 data-en="Commercial Cleaning" data-th="ทำความสะอาดเชิงพาณิชย์" data-ru="Коммерческая уборка">Commercial Cleaning</h3>
+                        <p data-en="Ensure a clean and productive workspace with our tailored commercial cleaning solutions."
+                           data-th="สร้างความมั่นใจในพื้นที่ทำงานที่สะอาดและมีประสิทธิภาพด้วยโซลูชั่นการทำความสะอาดเชิงพาณิชย์ที่ปรับแต่งของเรา"
+                           data-ru="Обеспечьте чистое и продуктивное рабочее пространство с помощью наших индивидуальных решений для коммерческой уборки.">
+                            Ensure a clean and productive workspace with our tailored commercial cleaning solutions.
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <i class="fas fa-broom"></i>
+                    <div>
+                        <h3 data-en="Specialized Cleaning" data-th="ทำความสะอาดเฉพาะทาง" data-ru="Специализированная уборка">Specialized Cleaning</h3>
+                        <p data-en="We offer specialized services to address unique cleaning challenges."
+                           data-th="เรานำเสนอบริการเฉพาะทางเพื่อแก้ไขปัญหาความท้าทายในการทำความสะอาดที่ไม่เหมือนใคร"
+                           data-ru="Мы предлагаем специализированные услуги для решения уникальных задач по уборке.">
+                            We offer specialized services to address unique cleaning challenges.
+                        </p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <section id="contact">
+            <h2 data-en="Contact Us for a Brighter Clean" data-th="ติดต่อเราเพื่อความสะอาดที่สดใสยิ่งขึ้น" data-ru="Свяжитесь с нами для более яркой чистоты">Contact Us for a Brighter Clean</h2>
+            <div class="contact-details">
+                <p><i class="fas fa-envelope"></i> <span data-en="Email:" data-th="อีเมล:" data-ru="Электронная почта:">Email:</span> <a href="mailto:sunshinecleaning.phuket@gmail.com">sunshinecleaning.phuket@gmail.com</a></p>
+                <p><i class="fas fa-phone"></i> <span data-en="Phone:" data-th="โทรศัพท์:" data-ru="Телефон:">Phone:</span> <a href="tel:+66653144285">+66 65 314 4285</a></p>
+                <p><i class="fas fa-map-marker-alt"></i> <span data-en="Serving al over Phuket Island" data-th="ให้บริการทั่วทั้งเกาะภูเก็ต" data-ru="Обслуживаем весь остров Пхукет">Serving al over Phuket Island</span></p>
+            </div>
+            <a href="mailto:sunshinecleaning.phuket@gmail.com" class="cta-button" data-en="Get a Free Quote" data-th="รับใบเสนอราคาฟรี" data-ru="Получите бесплатное предложение">Get a Free Quote</a>
+        </section>
+
+        <section id="google-reviews">
+            <h2 data-en="Our Clients Shine with Praise" data-th="ลูกค้าของเราเปล่งประกายด้วยคำชม" data-ru="Наши клиенты сияют от похвалы">Our Clients Shine with Praise</h2>
+            <p data-en="We're committed to exceeding expectations. See what our clients are saying about Sun Shine Cleaning on Google."
+               data-th="เรามุ่งมั่นที่จะเกินความคาดหมาย ดูสิ่งที่ลูกค้าของเราพูดถึง ซันไชน์ คลีนนิ่ง บน Google"
+               data-ru="Мы стремимся превзойти ожидания. Посмотрите, что говорят наши клиенты о Сан Шайн Клининг в Google.">
+                We're committed to exceeding expectations. See what our clients are saying about Sun Shine Cleaning on Google.
+            </p>
+            <div class="google-reviews-placeholder">
+                <p data-en="Google Reviews will appear here once you embed the widget."
+                   data-th="รีวิว Google จะปรากฏที่นี่เมื่อคุณฝังวิดเจ็ต"
+                   data-ru="Отзывы Google появятся здесь после того, как вы встроите виджет.">
+                    Google Reviews will appear here once you embed the widget.
+                </p>
+                <p><a href="https://maps.app.goo.gl/YOUR_GOOGLE_MAPS_LINK" target="_blank" rel="noopener noreferrer" data-en="Leave us a review on Google!"
+                       data-th="ฝากรีวิวให้เราบน Google!"
+                       data-ru="Оставьте нам отзыв в Google!">
+                        Leave us a review on Google!
+                    </a></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p data-en="© 2025 Sun Shine Cleaning. All rights reserved."
+           data-th="© 2025 ซันไชน์ คลีนนิ่ง. สงวนลิขสิทธิ์"
+           data-ru="© 2025 Сан Шайн Клининг. Все права защищены.">
+            © 2025 Sun Shine Cleaning. All rights reserved.
+        </p>
+    </footer>
+
+    <script>
+        // Function to translate text
+        function translatePage(lang) {
+            document.querySelectorAll('[data-en]').forEach(element => {
+                const translation = element.dataset[lang];
+                if (translation) {
+                    element.textContent = translation;
+                }
+            });
+        }
+
+        // Function to get user's preferred language
+        function getUserPreferredLanguage() {
+            const storedLang = localStorage.getItem('preferredLanguage');
+            if (storedLang) {
+                return storedLang;
+            }
+
+            const userLang = navigator.language || navigator.userLanguage;
+            if (userLang.startsWith('th')) {
+                return 'th';
+            } else if (userLang.startsWith('ru')) {
+                return 'ru';
+            } else {
+                return 'en'; // Default to English
+            }
+        }
+
+        // Set initial language
+        const initialLang = getUserPreferredLanguage();
+        translatePage(initialLang);
+
+        // Language switchers
+        document.querySelectorAll('.language-switcher button').forEach(button => {
+            button.addEventListener('click', function() {
+                const lang = this.dataset.lang;
+                translatePage(lang);
+                localStorage.setItem('preferredLanguage', lang);
+            });
+        });
+    </script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pat's Cleaning Services Phuket - Professional Cleaning</title>
     <meta name="description" content="Professional cleaning services in Phuket. Reliable and personalized cleaning for homes and businesses. Get a free quote today!">
     <meta name="keywords" content="cleaning services, Phuket, house cleaning, deep cleaning, laundry delivery, professional cleaning, reliable cleaning, local business">
