@@ -3,13 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pat's Cleaning Services Phuket</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Pat's Cleaning Services Phuket - Professional Cleaning</title>
+    <meta name="description" content="Professional cleaning services in Phuket. Reliable and personalized cleaning for homes and businesses. Get a free quote today!">
+    <meta name="keywords" content="cleaning services, Phuket, house cleaning, deep cleaning, laundry delivery, professional cleaning, reliable cleaning, local business">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Pat's Cleaning Services Phuket">
+    <link rel="canonical" href="https://yourdomain.com/"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
-        /* Reset and Base Styles */
+        /* Modern Reset and Base Styles */
         * {
             margin: 0;
             padding: 0;
@@ -18,10 +22,23 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            line-height: 1.6;
-            background-color: #f0f4f3;
-            color: #2d3748;
+            line-height: 1.7; /* Improved line height for readability */
+            background-color: #f8f9fa; /* Light gray background */
+            color: #343a40; /* Dark gray text */
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased; /* Improve font rendering for smoother text */
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
         }
 
         /* Header */
@@ -33,35 +50,40 @@
             align-items: center;
             position: sticky;
             top: 0;
-            z-index: 10;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1000; /* Increased z-index for better stacking */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Stronger shadow */
         }
 
         .logo {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 1rem;
+        }
+
+        .logo i {
+            font-size: 1.8rem;
+            color: #fff;
         }
 
         .logo h1 {
             color: #fff;
-            font-size: 1.8rem;
+            font-size: 2rem;
             font-weight: 600;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
+            margin-bottom: 0;
         }
 
         nav ul {
             display: flex;
-            list-style: none;
-            gap: 2.5rem;
+            gap: 3rem;
         }
 
         nav a {
             color: #fff;
-            text-decoration: none;
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             font-weight: 500;
-            transition: color 0.3s ease, transform 0.3s ease;
+            transition: color 0.3s ease, transform 0.2s ease-in-out;
+            position: relative;
         }
 
         nav a:hover {
@@ -71,93 +93,132 @@
 
         /* Main Content */
         main {
-            max-width: 1100px;
-            margin: 2rem auto; /* Increased top/bottom margin */
-            padding: 3rem 1.5rem;
+            max-width: 1200px; /* Wider max-width for better content flow */
+            margin: 3rem auto; /* Increased top/bottom margin */
+            padding: 3rem 2rem;
         }
 
         section {
-            margin-bottom: 4rem;
-            padding: 2.5rem; /* Increased padding */
+            margin-bottom: 5rem;
+            padding: 3rem;
             background: #fff;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease;
+            border-radius: 15px; /* More rounded corners */
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08); /* Softer, wider shadow */
+            transition: transform 0.2s ease-in-out;
         }
 
         section:hover {
-            transform: translateY(-5px);
+            transform: translateY(-3px);
         }
 
         h2 {
             color: #2f847c;
-            font-size: 2.2rem;
-            margin-bottom: 1.5rem;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
             position: relative;
+            font-weight: 700;
         }
 
         h2::after {
             content: '';
-            width: 50px;
-            height: 3px;
+            width: 60px;
+            height: 4px;
             background: #fdd85d;
             position: absolute;
-            bottom: -8px;
+            bottom: -10px;
             left: 0;
         }
 
         p, li {
-            font-size: 1.1rem;
-            color: #4a5568;
-            line-height: 1.7; /* Improved line height for readability */
+            font-size: 1.2rem;
+            color: #495057;
+            line-height: 1.8;
+            margin-bottom: 1rem; /* Added margin to paragraphs */
         }
 
         #services ul {
             list-style: none;
             padding-left: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+            gap: 2rem;
         }
 
         #services li {
-            margin: 1.2rem 0; /* Increased margin */
+            margin: 0;
+            padding: 1.5rem;
+            background-color: #f0f4f3;
+            border-radius: 10px;
             display: flex;
             align-items: center;
-            gap: 1rem; /* Increased gap */
+            gap: 1.5rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            transition: background-color 0.2s ease-in-out;
+        }
+
+        #services li:hover {
+            background-color: #e9ecef;
         }
 
         #services li i {
             color: #2f847c;
-            font-size: 1.4rem; /* Increased icon size */
+            font-size: 1.6rem;
         }
 
         /* Contact Us Section */
         #contact {
-            text-align: center; /* Center the contact information */
+            text-align: center;
         }
 
         .contact-details {
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
         }
 
         .contact-details p {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
         }
 
         .cta-button {
             display: inline-block;
-            padding: 1rem 2rem;
+            padding: 1.2rem 2.5rem;
             background-color: #fdd85d;
             color: #2f847c;
             text-decoration: none;
-            border-radius: 8px;
+            border-radius: 10px;
             font-weight: 600;
-            font-size: 1.1rem;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            font-size: 1.2rem;
+            transition: background-color 0.3s ease, transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         .cta-button:hover {
             background-color: #e3c450;
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Google Reviews Section */
+        #google-reviews {
+            text-align: center;
+            margin-top: 4rem;
+            padding: 3rem;
+            background-color: #e9ecef;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+        }
+
+        #google-reviews h2 {
+            color: #2f847c;
+            margin-bottom: 2.5rem;
+        }
+
+        .google-reviews-placeholder {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+            font-style: italic;
+            color: #777;
         }
 
         /* Footer */
@@ -165,38 +226,50 @@
             background: #2f847c;
             color: #fff;
             text-align: center;
-            padding: 1rem;
-            font-size: 0.9rem;
-            border-top: 4px solid #fdd85d;
+            padding: 1.5rem;
+            font-size: 1rem;
+            border-top: 5px solid #fdd85d;
         }
 
         /* Responsive Design */
-        @media (max-width: 768px) {
+        @media (max-width: 992px) {
             header {
                 flex-direction: column;
-                padding: 1rem;
+                padding: 1.5rem;
             }
 
             .logo {
-                margin-bottom: 1rem;
+                margin-bottom: 1.5rem;
             }
 
             nav ul {
                 flex-direction: column;
                 gap: 1.5rem;
-                margin-top: 1rem;
+                margin-top: 1.5rem;
             }
+        }
 
-            h2 {
-                font-size: 1.8rem;
+        @media (max-width: 768px) {
+            main {
+                padding: 2rem 1rem;
             }
 
             section {
-                padding: 1.5rem;
+                padding: 2rem;
+                margin-bottom: 4rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+                margin-bottom: 1.5rem;
+            }
+
+            #services ul {
+                grid-template-columns: 1fr;
             }
 
             .contact-details {
-                margin-bottom: 1rem;
+                margin-bottom: 1.5rem;
             }
         }
     </style>
@@ -204,7 +277,7 @@
 <body>
     <header>
         <div class="logo">
-            <i class="fas fa-broom fa-lg" style="color:#fff;"></i>
+            <i class="fas fa-broom"></i>
             <h1>Pat's Cleaning Services</h1>
         </div>
         <nav>
@@ -212,42 +285,96 @@
                 <li><a href="#about">About Us</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#contact">Contact Us</a></li>
+                <li><a href="#google-reviews">Reviews</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <section id="about">
-            <h2>About Us</h2>
-            <p>
-                Pat's Cleaning Services Phuket is a locally owned small business proudly serving all corners of Phuket.
-                We specialize in personalized cleaning solutions, assigning each client a dedicated team based on their property needs.
-                From routine upkeep to emergency deep cleans, we bring a touch of tropical freshness to every job!
-            </p>
+            <h2>Your Trusted Cleaning Partner in Phuket</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center;">
+                <div class="about-content">
+                    <p>Pat's Cleaning Services is a locally owned and operated business deeply rooted in the Phuket community. We take pride in delivering exceptional cleaning services with a personal touch.</p>
+                    <p>Our dedicated team understands the importance of a clean and healthy environment, whether it's your home, villa, or business. We're committed to providing reliable, efficient, and personalized cleaning solutions tailored to your specific needs.</p>
+                    <p>From routine upkeep to specialized deep cleaning and convenient laundry services, we strive to exceed your expectations and ensure your complete satisfaction. Experience the difference with Pat's Cleaning Services – your trusted partner for a sparkling clean Phuket.</p>
+                </div>
+                <div class="about-image">
+                    <img src="placeholder-cleaning-team.jpg" alt="Friendly cleaning team in Phuket" style="max-width: 100%; height: auto; border-radius: 10px;">
+                </div>
+            </div>
         </section>
 
         <section id="services">
-            <h2>Services</h2>
+            <h2>Our Comprehensive Cleaning Services</h2>
             <ul>
-                <li><i class="fas fa-check-circle"></i> Regular Cleaning</li>
-                <li><i class="fas fa-fire"></i> Urgent/Deep Cleaning</li>
-                <li><i class="fas fa-tshirt"></i> Laundry Delivery (120 THB/KG + Delivery)</li>
+                <li>
+                    <i class="fas fa-home"></i>
+                    <div>
+                        <h3>Regular Home Cleaning</h3>
+                        <p>Keep your home consistently clean and comfortable with our scheduled cleaning services.</p>
+                    </div>
+                </li>
+                <li>
+                    <i class="fas fa-soap"></i>
+                    <div>
+                        <h3>Deep Cleaning & Sanitization</h3>
+                        <p>Thorough cleaning to eliminate dirt, grime, and bacteria, especially important for health and hygiene.</p>
+                    </div>
+                </li>
+                <li>
+                    <i class="fas fa-fire-alt"></i>
+                    <div>
+                        <h3>Urgent/Deep Cleaning</h3>
+                        <p>For those times when you need a quick turnaround or a more intensive clean.</p>
+                    </div>
+                </li>
+                <li>
+                    <i class="fas fa-villa"></i>
+                    <div>
+                        <h3>Villa & Property Cleaning</h3>
+                        <p>Specialized cleaning services for villas and larger properties, ensuring every corner shines.</p>
+                    </div>
+                </li>
+                <li>
+                    <i class="fas fa-tshirt"></i>
+                    <div>
+                        <h3>Laundry Delivery Service</h3>
+                        <p>Convenient laundry service with pickup and delivery (120 THB/KG + Delivery Fee).</p>
+                    </div>
+                </li>
+                <li>
+                    <i class="fas fa-briefcase"></i>
+                    <div>
+                        <h3>Commercial Cleaning</h3>
+                        <p>Professional cleaning solutions for offices, businesses, and commercial spaces.</p>
+                    </div>
+                </li>
             </ul>
         </section>
 
         <section id="contact">
-            <h2>Contact Us</h2>
+            <h2>Contact Us Today for a Spotless Space</h2>
             <div class="contact-details">
-                <p>Email: info@patsCleaningPhuket.com</p>
-                <p>Phone: +66 123 456 789</p>
-                <p>We operate island-wide across Phuket!</p>
+                <p><i class="fas fa-envelope"></i> Email: <a href="mailto:info@patsCleaningPhuket.com">info@patsCleaningPhuket.com</a></p>
+                <p><i class="fas fa-phone"></i> Phone: <a href="tel:+66123456789">+66 123 456 789</a></p>
+                <p><i class="fas fa-map-marker-alt"></i> Serving all of Phuket Island</p>
             </div>
             <a href="mailto:info@patsCleaningPhuket.com" class="cta-button">Get a Free Quote</a>
         </section>
+
+        <section id="google-reviews">
+            <h2>What Our Clients Say</h2>
+            <p>We value our clients' feedback. See what people are saying about Pat's Cleaning Services on Google.</p>
+            <div class="google-reviews-placeholder">
+                <p>Google Reviews will appear here once you embed the widget.</p>
+                <p><a href="https://maps.app.goo.gl/YOUR_GOOGLE_MAPS_LINK" target="_blank" rel="noopener noreferrer">Leave us a review on Google!</a></p>
+            </div>
+            </section>
     </main>
 
     <footer>
-        <p>© 2025 Pat's Cleaning Services Phuket. All rights reserved.</p>
+        <p>&copy; 2025 Pat's Cleaning Services Phuket. All rights reserved.</p>
     </footer>
 </body>
 </html>
