@@ -1,0 +1,584 @@
+/* style.css */
+
+/*--------------------------------------------------------------
+# Base Styles & Variables
+--------------------------------------------------------------*/
+:root {
+    /* Colors */
+    --color-primary: #ff9800; /* Orange */
+    --color-secondary: #ffc107; /* Amber */
+    --color-background: #fff9ec; /* Very light warm */
+    --color-light-bg: #ffffff;
+    --color-text-dark: #343a40;
+    --color-text-medium: #495057;
+    --color-text-light: #ffffff;
+    --color-border: #eee;
+
+    /* Fonts */
+    --font-primary: 'Poppins', sans-serif;
+
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    --spacing-xxl: 4rem;
+
+    /* Borders & Shadows */
+    --border-radius-sm: 5px;
+    --border-radius-md: 10px;
+    --border-radius-lg: 15px;
+    --shadow-light: 0 2px 5px rgba(0, 0, 0, 0.05);
+    --shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow-large: 0 6px 20px rgba(0, 0, 0, 0.1);
+
+    /* Transitions */
+    --transition-fast: 0.2s ease-in-out;
+    --transition-medium: 0.3s ease-in-out;
+}
+
+/* Modern Reset */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+    font-size: 16px; /* Base font size */
+}
+
+body {
+    font-family: var(--font-primary);
+    line-height: 1.7;
+    background-color: var(--color-background);
+    color: var(--color-text-dark);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-primary);
+    transition: color var(--transition-medium);
+}
+
+a:hover {
+    color: var(--color-secondary);
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Remove bottom space */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-md);
+    line-height: 1.3;
+}
+
+h2 {
+    font-size: 2.5rem;
+    position: relative;
+    padding-bottom: var(--spacing-sm);
+    margin-bottom: var(--spacing-xl);
+}
+
+/* Underline effect for H2 */
+h2::after {
+    content: '';
+    width: 70px;
+    height: 4px;
+    background: var(--color-secondary);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-radius: 2px;
+}
+/* Center H2 underline if text is centered */
+.text-center h2::after {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+p {
+    font-size: 1.1rem;
+    color: var(--color-text-medium);
+    margin-bottom: var(--spacing-md);
+}
+p.lead {
+    font-size: 1.25rem;
+    font-weight: 400;
+    margin-bottom: var(--spacing-lg);
+}
+
+/*--------------------------------------------------------------
+# Layout & Container
+--------------------------------------------------------------*/
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--spacing-sm); /* Gutter */
+    padding-right: var(--spacing-sm); /* Gutter */
+}
+
+.section-padding {
+    padding-top: var(--spacing-xxl);
+    padding-bottom: var(--spacing-xxl);
+}
+
+.bg-light {
+    background-color: var(--color-light-bg);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.img-fluid {
+     max-width: 100%;
+     height: auto;
+}
+
+.rounded { border-radius: var(--border-radius-md); }
+.shadow { box-shadow: var(--shadow-medium); }
+
+/*--------------------------------------------------------------
+# Header & Navigation (Desktop First)
+--------------------------------------------------------------*/
+.site-header {
+    background: linear-gradient(135deg, var(--color-secondary), var(--color-primary));
+    padding: var(--spacing-sm) 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow-large);
+    color: var(--color-text-light);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    max-height: 60px; /* Adjust as needed */
+    width: auto;
+}
+/* Optional text logo style
+.logo-text {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--color-text-light);
+} */
+
+.main-nav ul {
+    display: flex;
+    gap: var(--spacing-lg);
+}
+
+.main-nav a {
+    color: var(--color-text-light);
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: var(--spacing-xs) 0;
+    position: relative;
+    transition: color var(--transition-fast), transform var(--transition-fast);
+}
+
+.main-nav a:hover {
+    color: var(--color-text-light);
+    transform: translateY(-2px);
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+}
+
+/* Hamburger Menu Button - Hidden on Desktop */
+.hamburger-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--color-text-light);
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: var(--spacing-xs);
+    z-index: 1001; /* Above nav content */
+}
+
+.hamburger-btn .fa-times { display: none; } /* Hide close icon initially */
+.nav--open .hamburger-btn .fa-bars { display: none; } /* Hide bars when open */
+.nav--open .hamburger-btn .fa-times { display: block; } /* Show close when open */
+
+
+/* Language Switcher */
+.language-switcher button {
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: var(--color-text-light);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    margin-left: var(--spacing-xs);
+    font-size: 0.9rem;
+    transition: background-color var(--transition-medium), border-color var(--transition-medium);
+}
+
+.language-switcher button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: var(--color-text-light);
+}
+
+.language-switcher.mobile-lang { display: none; } /* Hidden on desktop */
+
+/*--------------------------------------------------------------
+# Components
+--------------------------------------------------------------*/
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border: none;
+    border-radius: var(--border-radius-md);
+    font-weight: 600;
+    font-size: 1.1rem;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color var(--transition-medium), transform var(--transition-fast), box-shadow var(--transition-fast);
+    box-shadow: var(--shadow-light);
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-secondary);
+    color: var(--color-text-light);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-medium);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-medium);
+}
+
+.btn i { /* Icon spacing */
+    margin-right: var(--spacing-xs);
+}
+
+/* Service Cards */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.service-card {
+    background-color: var(--color-light-bg);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-medium);
+    display: flex;
+    align-items: flex-start; /* Align icon top */
+    gap: var(--spacing-md);
+    transition: transform var(--transition-medium), box-shadow var(--transition-medium);
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-large);
+}
+
+.service-icon {
+    color: var(--color-primary);
+    font-size: 2.5rem;
+    flex-shrink: 0; /* Prevent icon from shrinking */
+    width: 40px; /* Fixed width for alignment */
+    text-align: center;
+}
+
+.service-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: var(--spacing-xs);
+    color: var(--color-text-dark); /* Darker heading for cards */
+}
+
+.service-card p {
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+# Sections Specific Styles
+--------------------------------------------------------------*/
+/* About Section */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Default 2 columns */
+    gap: var(--spacing-xl);
+    align-items: center;
+}
+
+.about-image {
+    text-align: center; /* Center image if container is wider */
+}
+
+/* Contact Section */
+.contact-details {
+    margin-bottom: var(--spacing-xl);
+}
+
+.contact-details p {
+    font-size: 1.2rem;
+    margin-bottom: var(--spacing-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center align items */
+    gap: var(--spacing-sm);
+}
+
+.contact-details strong {
+    color: var(--color-text-dark);
+}
+
+.contact-details a {
+    color: var(--color-primary);
+    font-weight: 500;
+}
+.contact-details a:hover {
+    text-decoration: underline;
+}
+
+.icon-contact {
+    color: var(--color-secondary);
+    font-size: 1.4rem;
+    width: 25px; /* Align icons */
+    text-align: center;
+}
+
+
+/* Google Reviews Section */
+.google-reviews-placeholder {
+    background-color: #fff;
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-light);
+    margin-top: var(--spacing-lg);
+    border: 1px solid var(--color-border);
+}
+
+.google-reviews-placeholder p {
+    font-style: italic;
+    color: var(--color-text-medium);
+    margin-bottom: var(--spacing-md);
+}
+
+.google-reviews-placeholder .small-text {
+    font-size: 0.85rem;
+    font-style: normal;
+    color: #999;
+    margin-top: var(--spacing-sm);
+    margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+.site-footer-bottom {
+    background: var(--color-primary);
+    color: var(--color-text-light);
+    text-align: center;
+    padding: var(--spacing-md) 0;
+    margin-top: var(--spacing-xl);
+    border-top: 5px solid var(--color-secondary);
+}
+
+.site-footer-bottom p {
+    margin-bottom: 0;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/*--------------------------------------------------------------
+# Responsive Design (Mobile First Approach - adjustments)
+# Using max-width for overrides from desktop styles
+--------------------------------------------------------------*/
+
+/* Tablet and smaller */
+@media (max-width: 992px) {
+    html {
+        font-size: 15px; /* Slightly smaller base font */
+    }
+
+    h2 {
+        font-size: 2.2rem;
+    }
+
+    .container {
+        width: 92%;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr; /* Stack on tablets */
+        gap: var(--spacing-lg);
+    }
+
+    .about-image {
+        order: -1; /* Move image above text */
+        margin-bottom: var(--spacing-lg);
+    }
+    .about-image img {
+        max-width: 400px; /* Limit image size */
+        margin: 0 auto; /* Center */
+    }
+}
+
+
+/* Mobile devices */
+@media (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+        margin-bottom: var(--spacing-lg);
+    }
+     h2::after {
+        width: 50px;
+        height: 3px;
+    }
+
+    .section-padding {
+        padding-top: var(--spacing-xl);
+        padding-bottom: var(--spacing-xl);
+    }
+
+    /* --- Mobile Header & Navigation --- */
+    .site-header {
+        padding: var(--spacing-sm) 0;
+    }
+
+    .header-container {
+        position: relative; /* Needed for absolute positioning of nav */
+    }
+
+    .hamburger-btn {
+        display: block; /* Show hamburger */
+    }
+
+    .desktop-lang {
+        display: none; /* Hide desktop language switcher */
+    }
+
+    .main-nav {
+        /* This acts as the container for the absolute positioned content */
+        position: static;
+    }
+
+    .nav-content {
+        display: flex; /* Use flex for layout inside */
+        flex-direction: column;
+        position: absolute;
+        top: 100%; /* Position below header */
+        left: 0;
+        width: 100%;
+        background: linear-gradient(135deg, var(--color-secondary), var(--color-primary));
+        box-shadow: var(--shadow-large);
+        padding: var(--spacing-md) var(--spacing-lg);
+        /* Animation properties */
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        visibility: hidden;
+        transition: max-height 0.4s ease-out, opacity 0.3s ease-out, visibility 0.4s ease-out;
+    }
+
+    /* Styles when navigation is open */
+    .nav--open .nav-content {
+        max-height: 500px; /* Adjust if needed, large enough for content */
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        gap: 0;
+        width: 100%;
+        text-align: center;
+        margin-bottom: var(--spacing-md); /* Space before mobile lang switcher */
+    }
+
+    .main-nav li {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+     .main-nav li:last-child {
+        border-bottom: none;
+    }
+
+    .main-nav a {
+        display: block; /* Make links take full width */
+        padding: var(--spacing-sm) 0;
+        font-size: 1.2rem;
+    }
+     .main-nav a:hover {
+        background-color: rgba(0,0,0, 0.1);
+        transform: none; /* Disable hover transform on mobile */
+        text-shadow: none;
+     }
+
+    .language-switcher.mobile-lang {
+        display: flex; /* Show mobile language switcher */
+        justify-content: center;
+        padding-top: var(--spacing-sm);
+        gap: var(--spacing-sm);
+    }
+     .language-switcher.mobile-lang button {
+        padding: var(--spacing-xs) var(--spacing-xs);
+        font-size: 1rem;
+     }
+    /* --- End Mobile Navigation --- */
+
+    .services-grid {
+        grid-template-columns: 1fr; /* Stack services on mobile */
+    }
+
+    .btn {
+        padding: var(--spacing-sm) var(--spacing-md);
+        font-size: 1rem;
+    }
+
+     .contact-details p {
+        font-size: 1.1rem;
+        flex-direction: column; /* Stack icon and text */
+        gap: var(--spacing-xs);
+        align-items: center;
+     }
+    .icon-contact {
+        margin-bottom: var(--spacing-xs);
+    }
+}
