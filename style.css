@@ -15,7 +15,7 @@
     --color-border: #eee;
 
     /* Fonts */
-    --font-primary: 'Poppins', sans-serif;
+    --font-primary: 'Poppins', Arial, sans-serif; /* Added fallback fonts */
 
     /* Spacing */
     --spacing-xs: 0.5rem;
@@ -60,6 +60,7 @@ body {
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    margin: 0; /* Reset default body margin */
 }
 
 a {
@@ -83,7 +84,7 @@ img {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-weight: 600;
+    font-weight: 700; /* Increased from 600 for bolder headings */
     color: var(--color-primary);
     margin-bottom: var(--spacing-md);
     line-height: 1.3;
@@ -107,6 +108,7 @@ h2::after {
     left: 0;
     border-radius: 2px;
 }
+
 /* Center H2 underline if text is centered */
 .text-center h2::after {
     left: 50%;
@@ -118,6 +120,7 @@ p {
     color: var(--color-text-medium);
     margin-bottom: var(--spacing-md);
 }
+
 p.lead {
     font-size: 1.25rem;
     font-weight: 400;
@@ -129,13 +132,12 @@ p.lead {
 --------------------------------------------------------------*/
 .container {
     width: 90%; /* Responsive width */
-    max-width: 1140px; /* <<< Make sure this value is wide enough for you */
-    margin-left: auto;  /* Centers the container */
+    max-width: 1140px; /* Adjust if needed */
+    margin-left: auto; /* Centers the container */
     margin-right: auto; /* Centers the container */
-    padding-left: 15px; /* Space inside the container edges */
-    padding-right: 15px;/* Space inside the container edges */
+    padding-left: 10px; /* Space inside the container edges */
+    padding-right: 10px; /* Space inside the container edges */
 }
-
 
 .section-padding {
     padding-top: var(--spacing-xxl);
@@ -151,46 +153,43 @@ p.lead {
 }
 
 .img-fluid {
-     max-width: 100%;
-     height: auto;
+    max-width: 100%;
+    height: auto;
 }
 
-.rounded { border-radius: var(--border-radius-md); }
-.shadow { box-shadow: var(--shadow-medium); }
+.rounded {
+    border-radius: var(--border-radius-md);
+}
+
+.shadow {
+    box-shadow: var(--shadow-medium);
+}
 
 /*--------------------------------------------------------------
 # Header & Navigation (Desktop First)
 --------------------------------------------------------------*/
 .site-header {
     background: linear-gradient(135deg, var(--color-secondary), var(--color-primary));
-    padding: var(--spacing-sm) 0; /* Vertical padding, NO horizontal padding */
+    padding: var(--spacing-sm) 0; /* Vertical padding only */
     position: sticky;
     top: 0;
     z-index: 1000;
-    /* Add width: 100%; just to be absolutely explicit, though usually not needed */
     width: 100%;
 }
 
-.header-container { /* This class is ON the container DIV inside the header */
+.header-container {
     display: flex;
     justify-content: space-between; /* Pushes logo left, nav right */
-    align-items: center;
+    align-items: left;
 }
 
-/* --- Change this rule --- */
 .logo img {
-    /* max-height: 50px; */ /* Remove or comment out old value */
-    max-height: 40px;  /* <--- DECREASE this value (e.g., 40px or 45px) */
+    max-height: 40px; /* Increased for desktop visibility */
     width: auto;
+    align-self:flex-start;
 }
 
-/* Optional text logo style
-.logo-text {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--color-text-light);
-} */
-
+/* Main navigation */
 .main-nav ul {
     display: flex;
     gap: var(--spacing-lg);
@@ -211,6 +210,11 @@ p.lead {
     text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
 }
 
+.main-nav a:focus {
+    outline: 2px solid var(--color-secondary);
+    outline-offset: 2px;
+}
+
 /* Hamburger Menu Button - Hidden on Desktop */
 .hamburger-btn {
     display: none;
@@ -223,10 +227,17 @@ p.lead {
     z-index: 1001; /* Above nav content */
 }
 
-.hamburger-btn .fa-times { display: none; } /* Hide close icon initially */
-.nav--open .hamburger-btn .fa-bars { display: none; } /* Hide bars when open */
-.nav--open .hamburger-btn .fa-times { display: block; } /* Show close when open */
+.hamburger-btn .fa-times {
+    display: none; /* Hide close icon initially */
+}
 
+.nav--open .hamburger-btn .fa-bars {
+    display: none; /* Hide bars when open */
+}
+
+.nav--open .hamburger-btn .fa-times {
+    display: block; /* Show close when open */
+}
 
 /* Language Switcher */
 .language-switcher button {
@@ -242,15 +253,19 @@ p.lead {
 }
 
 .language-switcher button:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.2); /* Improved contrast */
     border-color: var(--color-text-light);
 }
 
-.language-switcher.mobile-lang { display: none; } /* Hidden on desktop */
+.language-switcher.mobile-lang {
+    display: none; /* Hidden on desktop */
+}
 
 /*--------------------------------------------------------------
 # Components
 --------------------------------------------------------------*/
+
+
 /* Buttons */
 .btn {
     display: inline-block;
@@ -290,8 +305,8 @@ p.lead {
     box-shadow: var(--shadow-medium);
 }
 
-.btn i { /* Icon spacing */
-    margin-right: var(--spacing-xs);
+.btn i {
+    margin-right: var(--spacing-xs); /* Icon spacing */
 }
 
 /* Service Cards */
@@ -336,6 +351,31 @@ p.lead {
     margin-bottom: 0;
 }
 
+/* Contact Form (Optional) */
+.contact-form {
+    max-width: 500px;
+    margin: 0 auto var(--spacing-lg);
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: var(--spacing-xs);
+    font-weight: 500;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-sm);
+}
+
+.contact-form textarea {
+    height: 150px;
+}
+
 /*--------------------------------------------------------------
 # Sections Specific Styles
 --------------------------------------------------------------*/
@@ -373,6 +413,7 @@ p.lead {
     color: var(--color-primary);
     font-weight: 500;
 }
+
 .contact-details a:hover {
     text-decoration: underline;
 }
@@ -383,7 +424,6 @@ p.lead {
     width: 25px; /* Align icons */
     text-align: center;
 }
-
 
 /* Google Reviews Section */
 .google-reviews-placeholder {
@@ -429,9 +469,7 @@ p.lead {
 
 /*--------------------------------------------------------------
 # Responsive Design (Mobile First Approach - adjustments)
-# Using max-width for overrides from desktop styles
 --------------------------------------------------------------*/
-
 /* Tablet and smaller */
 @media (max-width: 992px) {
     html {
@@ -455,12 +493,12 @@ p.lead {
         order: -1; /* Move image above text */
         margin-bottom: var(--spacing-lg);
     }
+
     .about-image img {
         max-width: 400px; /* Limit image size */
         margin: 0 auto; /* Center */
     }
 }
-
 
 /* Mobile devices */
 @media (max-width: 768px) {
@@ -472,7 +510,8 @@ p.lead {
         font-size: 1.8rem;
         margin-bottom: var(--spacing-lg);
     }
-     h2::after {
+
+    h2::after {
         width: 50px;
         height: 3px;
     }
@@ -482,13 +521,17 @@ p.lead {
         padding-bottom: var(--spacing-xl);
     }
 
-    /* --- Mobile Header & Navigation --- */
+    /* Mobile Header & Navigation */
     .site-header {
         padding: var(--spacing-sm) 0;
     }
 
     .header-container {
         position: relative; /* Needed for absolute positioning of nav */
+    }
+
+    .logo img {
+        max-height: 40px; /* Smaller logo on mobile */
     }
 
     .hamburger-btn {
@@ -500,12 +543,11 @@ p.lead {
     }
 
     .main-nav {
-        /* This acts as the container for the absolute positioned content */
         position: static;
     }
 
     .nav-content {
-        display: flex; /* Use flex for layout inside */
+        display: flex;
         flex-direction: column;
         position: absolute;
         top: 100%; /* Position below header */
@@ -514,7 +556,6 @@ p.lead {
         background: linear-gradient(135deg, var(--color-secondary), var(--color-primary));
         box-shadow: var(--shadow-large);
         padding: var(--spacing-md) var(--spacing-lg);
-        /* Animation properties */
         max-height: 0;
         opacity: 0;
         overflow: hidden;
@@ -522,9 +563,8 @@ p.lead {
         transition: max-height 0.4s ease-out, opacity 0.3s ease-out, visibility 0.4s ease-out;
     }
 
-    /* Styles when navigation is open */
     .nav--open .nav-content {
-        max-height: 500px; /* Adjust if needed, large enough for content */
+        max-height: 500px; /* Adjust if needed */
         opacity: 1;
         visibility: visible;
     }
@@ -540,20 +580,22 @@ p.lead {
     .main-nav li {
         border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     }
-     .main-nav li:last-child {
+
+    .main-nav li:last-child {
         border-bottom: none;
     }
 
     .main-nav a {
-        display: block; /* Make links take full width */
+        display: block; /* Full-width links */
         padding: var(--spacing-sm) 0;
         font-size: 1.2rem;
     }
-     .main-nav a:hover {
-        background-color: rgba(0,0,0, 0.1);
+
+    .main-nav a:hover {
+        background-color: rgba(0, 0, 0, 0.1);
         transform: none; /* Disable hover transform on mobile */
         text-shadow: none;
-     }
+    }
 
     .language-switcher.mobile-lang {
         display: flex; /* Show mobile language switcher */
@@ -561,12 +603,13 @@ p.lead {
         padding-top: var(--spacing-sm);
         gap: var(--spacing-sm);
     }
-     .language-switcher.mobile-lang button {
+
+    .language-switcher.mobile-lang button {
         padding: var(--spacing-xs) var(--spacing-xs);
         font-size: 1rem;
-     }
-    /* --- End Mobile Navigation --- */
+    }
 
+    /* Other Mobile Adjustments */
     .services-grid {
         grid-template-columns: 1fr; /* Stack services on mobile */
     }
@@ -576,12 +619,13 @@ p.lead {
         font-size: 1rem;
     }
 
-     .contact-details p {
+    .contact-details p {
         font-size: 1.1rem;
         flex-direction: column; /* Stack icon and text */
         gap: var(--spacing-xs);
         align-items: center;
-     }
+    }
+
     .icon-contact {
         margin-bottom: var(--spacing-xs);
     }
