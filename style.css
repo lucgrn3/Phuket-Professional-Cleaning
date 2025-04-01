@@ -458,9 +458,25 @@ p.lead {
         max-height: 35px;
     }
 
+    /* Ensure header layout is logo left, language right */
+    .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: var(--spacing-sm) 0; /* Optional: ensures consistent padding */
+    }
+
+    .logo {
+        margin: 0; /* Remove any unintended margins */
+    }
+
+    .language-switcher {
+        margin: 0; /* Remove any unintended margins */
+    }
+
     .language-switcher button#lang-toggle {
-        padding: var(--spacing-xs); /* Consistent with desktop */
-        font-size: 0.75rem; /* Slightly smaller than desktop (12px) */
+        padding: var(--spacing-xs);
+        font-size: 0.75rem;
     }
 
     .language-switcher .lang-dropdown {
