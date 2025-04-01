@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,42 +30,21 @@
 
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
     <header class="site-header">
         <div class="container header-container">
             <div class="logo">
                 <picture>
-                    <!-- <source srcset="sun-shine-cleaning-Phuket.webp" type="image/webp"> -->
                     <img src="sun-shine-cleaning-Phuket.png" alt="Sun Shine Cleaning Phuket Professional Services Logo">
                 </picture>
             </div>
-
-            <button class="hamburger-btn" aria-label="Menu" aria-expanded="false" aria-controls="navContent">
-                <i class="fas fa-bars" aria-hidden="true"></i>
-                <i class="fas fa-times" aria-hidden="true"></i>
-            </button>
-
-            <nav class="main-nav">
-                <div class="nav-content" id="navContent">
-                    <ul>
-                        <li><a href="#about" data-en="About Us" data-th="เกี่ยวกับเรา" data-ru="О нас">About Us</a></li>
-                        <li><a href="#services" data-en="Services" data-th="บริการ" data-ru="Услуги">Services</a></li>
-                        <li><a href="#contact" data-en="Contact Us" data-th="ติดต่อเรา" data-ru="Контакты">Contact Us</a></li>
-                        <li><a href="#reviews" data-en="Reviews" data-th="รีวิว" data-ru="Отзывы">Reviews</a></li>
-                    </ul>
-                    <div class="language-switcher mobile-lang">
-                        <button data-lang="en" aria-label="Switch to English">EN</button>
-                        <button data-lang="th" aria-label="Switch to Thai">TH</button>
-                        <button data-lang="ru" aria-label="Switch to Russian">RU</button>
-                    </div>
-                </div>
-            </nav>
-
             <div class="language-switcher">
-                <button data-lang="en" aria-label="Switch to English">EN</button>
-                <button data-lang="th" aria-label="Switch to Thai">TH</button>
-                <button data-lang="ru" aria-label="Switch to Russian">RU</button>
+                <button id="lang-toggle" aria-label="Change Language"><i class="fas fa-globe"></i> <span id="current-lang">English</span> <i class="fas fa-caret-down"></i></button>
+                <ul class="lang-dropdown" id="lang-dropdown">
+                    <li><button data-lang="en">English</button></li>
+                    <li><button data-lang="th">ไทย</button></li>
+                    <li><button data-lang="ru">Русский</button></li>
+                </ul>
             </div>
         </div>
     </header>
@@ -89,7 +67,6 @@
                     </div>
                     <div class="about-image">
                         <picture>
-                            <!-- <source srcset="team-photo.webp" type="image/webp"> -->
                             <img src="template.png" alt="Sun Shine Cleaning Team in Phuket" class="img-fluid rounded shadow">
                         </picture>
                     </div>
@@ -132,7 +109,7 @@
                         <i class="fas fa-building service-icon"></i>
                         <div>
                             <h3 data-en="Villa Cleaning" data-th="ทำความสะอาดวิลล่า" data-ru="Уборка вилл">Villa Cleaning</h3>
-                            <p data-en="Maintain the pristine condition and comfort of your villa with our expert cleaning care." data-th="รักษา สภาพที่บริสุทธิ์และความสะดวกสบายของวิลล่าของคุณด้วยการดูแลทำความสะอาดอย่างเชี่ยวชาญของเรา" data-ru="Поддерживайте первозданное состояние и комфорт вашей виллы с помощью нашего экспертного ухода за чистотой.">
+                            <p data-en="Maintain the pristine condition and comfort of your villa with our expert cleaning care." data-th="รักษาสภาพที่บริสุทธิ์และความสะดวกสบายของวิลล่าของคุณด้วยการดูแลทำความสะอาดอย่างเชี่ยวชาญของเรา" data-ru="Поддерживайте первозданное состояние и комфорт вашей виллы с помощью нашего экспертного ухода за чистотой.">
                                 Maintain the pristine condition and comfort of your villa with our expert cleaning care.
                             </p>
                         </div>
@@ -212,24 +189,6 @@
         </div>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "LocalBusiness",
-            "name": "Sun Shine Cleaning Phuket",
-            "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Phuket",
-                "addressCountry": "TH"
-            },
-            "telephone": "+66653144285",
-            "email": "sunshinecleaning.phuket@gmail.com",
-            "url": "https://phuket-sunshinecleaning.com/",
-            "description": "Professional cleaning services for homes, villas, and businesses in Phuket."
-        }
-    </script>
-
     <script src="script.js"></script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9291727a0f66a4bb',t:'MTc0MzQ0MDk5Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</body>
 </html>
